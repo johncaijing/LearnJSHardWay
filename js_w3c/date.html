@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Date学习</title>
+</head>
+<body onload="getCurrentTime()">
+
+<p id="time"></p>
+
+<script type="text/javascript">
+	
+   var tips = "当前时间为:";
+
+	function getCurrentTime(){
+        var date = new Date();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+
+        console.log("hour:"+hour+" minute:"+minute+" second:"+second);      
+        document.getElementById('time').innerHTML = (tips+getStandardStr(hour)+":"+getStandardStr(minute)+":"+getStandardStr(second));
+
+        setTimeout('getCurrentTime()',500);
+      
+	}
+
+	function getStandardStr(str){
+		if(str<10){
+			return '0'+str;
+		}else{
+			return str;
+		}
+	}
+
+
+</script>
+</body>
+</html>

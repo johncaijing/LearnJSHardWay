@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>setTimeOut</title>
+</head>
+<body onload="count()">
+<script type="text/javascript">
+	var t = 0;
+
+	function count(){
+		document.getElementById('p1').innerHTML=(t++);
+		setTimeout('count()',1000);
+	}
+
+</script>
+<p id="p1">0</p>
+</body>
+</html>

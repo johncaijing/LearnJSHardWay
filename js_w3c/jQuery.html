@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.2.min.js"></script>
+  
+  <script type="text/javascript">
+  	function test(){
+  		$("#h01").attr("style","color:red").html("Hello jQuery");
+  	}
+  	$(document).ready(test);
+
+  	$(document).ready(function(){
+  		$("p").click(function(){
+  			$("p").hide();
+  		});
+  	});
+  </script>
+</head>
+<body>
+  <h1 id="h01"></h1>
+
+
+  <p> Click me,I will dispear</p>
+  <p> Click me,I will dispear1</p>
+  <p> Click me,I will dispear2</p>
+  <p> Click me,I will dispear3</p>
+</body>
+</html>

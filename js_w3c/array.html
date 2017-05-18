@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Array</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	var array = new Array(5);
+	array[0] = "John";
+	array[2] = "Kobe";
+	array[3] = "Curry";
+
+	for(item in array){
+		console.log(array[item]);
+	}
+
+	var array2 = [5,1,4,2,3,0];
+	var newarray = array.concat(array2);
+
+	console.log(newarray);
+
+	console.log(array);
+
+	console.log(Object.getPrototypeOf(newarray));
+
+	console.log(array2.join(','));
+
+	console.log(array2.sort());
+
+	console.log(array.sort())
+
+
+</script>
+
+</body>
+</html>

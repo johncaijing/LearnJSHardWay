@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom</title>
+</head>
+<body>
+  <p id="firstDOMClass">DOM 第一课</p>
+  <p>Hello World!</p>
+</body>
+<script type="text/javascript">
+	var element = document.getElementById("firstDOMClass");
+	//alert("element:"+element.innerHTML.nodeName+"nodeName:"+element.nodeName);
+	var createdTextNode = document.createTextNode("create TextNode");
+	element.appendChild(createdTextNode);
+	document.write(element.innerHTML);
+	alert("text node name:"+createdTextNode.nodeName);
+
+</script>
+</html>

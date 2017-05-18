@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM jQuery</title>
+	 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.2.min.js"></script>
+
+	 <script type="text/javascript">
+	 	
+	 	$(document).ready(function(){
+	 		$('#btn1').click(function(){
+	 			alert("p:html"+$('p').html());
+	 		});
+
+	 		$('#btn2').click(function(){
+	 			alert("p:text"+$('p').text());
+	 		});
+
+	 		$('#btn3').click(function(){
+	 			alert("p:val"+$('#input').val());
+	 		});
+	 	});
+
+	 </script>
+</head>
+<body>
+
+
+   <button id="btn1">button1</button>
+
+   <button id="btn2">button2</button>
+
+   <button id="btn3">button3</button>
+
+   <input type="text" id="input" value="HelloWorld!"/>
+   <p>你好，我是测试的内容<b>重点</b></p>
+</body>
+</html>

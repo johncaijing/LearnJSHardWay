@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Animate</title>
+	 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.2.min.js"></script>
+	 <script type="text/javascript">
+	 	
+	 	$(document).ready(function(){
+	 		$("#animate").click(function(){
+	 			var p = $('p');
+	 			p.animate({left:'150px',top:'200px'},'slow');
+	 			p.animate({right:'100px',top:'100px'},'slow');
+	 			p.animate({fontSize:'3Em'},'slow');
+	 			p.animate({height:'toggle'},function(){
+	 				alert('last animation is finished!!!');
+	 			});
+	 		});
+
+	 		$("#stop").click(function(){
+	 		  $('p').stop(true);
+	 		});
+	 	});
+
+	 </script>
+</head>
+<body>
+
+   <button id='animate'>Animate</button>
+   <button id='stop' style="margin-left: 200px">stop</button>
+   <p style="position: absolute; width: 200px;height: 200px;background-color: red">你好你好</p>
+
+</body>
+</html>

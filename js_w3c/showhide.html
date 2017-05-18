@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show hide</title>
+
+	 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.2.min.js"></script>
+    
+    
+    <script type="text/javascript">
+    	
+
+      $(document).ready(function(){
+           $('p').click(function(){       
+           if($('p').is(':visible')){
+           	   $('p').hide();
+           }
+           });     
+
+           $('button').click(function(){
+           	 if($('p').is(':visible')==false){
+           	   $('p').fadeIn('slow',function(){
+           	   	  alert('is fadein!!!!!!!!!!!!!!');
+           	   });
+           }else{
+           	   alert('already show!!!!!!!!!!!!!');
+           }
+           });
+      });
+
+    </script>   
+</head>
+<body>
+  <p>这是要显示的内容</p>
+  <button>show</button>
+
+</body>
+</html>
