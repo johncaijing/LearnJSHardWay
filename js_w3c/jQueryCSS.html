@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery CSS</title>
+	<script src="./jquery-1.7.2.min.js"></script>
+	<style type="text/css">
+		.blue{
+			color:blue;
+		}
+		.important{
+			font-size: x-large;
+			font-weight: bold;
+		}
+
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				$("p").addClass("blue");
+				console.log("before font size:"+$("#p2").css("font-size"));
+				$("#p2").css("font-size","1em");
+				console.log("after font size:"+$("#p2").css("font-size"));
+				//设置多个CSS属性
+				$("#p1").css({"background-color":"yellow","font-size":"200%"});
+			});
+			$("#btn2").click(function(){
+				$("p").removeClass("blue");
+			});
+			$(".btn3").click(function(){
+				$("p").toggleClass("important");
+			});
+		});
+	</script>
+</head>
+<body>
+
+<p id="p1">这是测试类</p>
+<p id="p2" style="font-size: 2em">这是第二个测试类</p>
+<button id="btn1">增加类</button>
+<button id="btn2">减少类</button>
+<buton class="btn3">toggle类</buton>
+
+</body>
+</html>
