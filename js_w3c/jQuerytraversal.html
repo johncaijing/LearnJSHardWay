@@ -15,12 +15,21 @@
 	 <script src="./jquery-1.7.2.min.js"></script>
 	 <script type="text/javascript">
 	 	$(document).ready(function(){
-           var parent = $("span").parent();
+           var parent = $("#current1,#current2").parent();
            parent.css({"color":"red","border":"3px solid blue"});
            var grandparent = parent.parent();
            grandparent.css({"color":"pink"});
            var grandgrandparent = grandparent.parent();
            grandgrandparent.css({"color":"black"}); 
+
+             
+           var child = $("#current3").children();
+           child.css({"border":"3px solid #ff00ff"});
+
+           var grandchild = child.children();
+           grandchild.css({"color":"yellow","fontSize":"2em"});
+
+           var allchildren = $("#current4").find("*").css({"color":"#eeaaee","border":"3px solid red"});
 
 	 	});
 	 </script>
@@ -31,18 +40,50 @@
   <div style="width:500px;">div (曾祖父)
     <ul>ul (祖父)  
       <li>li (父亲)
-        <span>span</span>
+        <span id="current1">span</span>
       </li>
     </ul>   
   </div>
 
   <div style="width:500px;">div (祖父)   
     <p>p (父亲)
-        <span>span</span>
+        <span id="current2">span</span>
       </p> 
   </div>
 </div>
 
+<div class="rectangle" >
+	<div style="width: 500px;" id="current3">当前元素
 
+	<ul>ul (子)
+
+	<li>li （孙）
+
+	<span >span (重孙)</span>
+		
+	</li>
+		
+
+	</ul>
+		
+	</div>
+</div>
+
+<div class="rectangle" >
+	<div style="width: 500px;" id="current4">当前元素
+
+	<ul>ul (子)
+
+	<li>li （孙）
+
+	<span >span (重孙)</span>
+		
+	</li>
+		
+
+	</ul>
+		
+	</div>
+</div>
 </body>
 </html>
