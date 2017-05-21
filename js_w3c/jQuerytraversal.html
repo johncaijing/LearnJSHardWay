@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Traversa;l</title>
+	<style type="text/css">
+		.rectangle *
+		{
+			display: block;
+			border: 2px solid lightgrey;
+			color: lightgrey;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+	 <script src="./jquery-1.7.2.min.js"></script>
+	 <script type="text/javascript">
+	 	$(document).ready(function(){
+           var parent = $("span").parent();
+           parent.css({"color":"red","border":"3px solid blue"});
+           var grandparent = parent.parent();
+           grandparent.css({"color":"pink"});
+           var grandgrandparent = grandparent.parent();
+           grandgrandparent.css({"color":"black"}); 
+
+	 	});
+	 </script>
+</head>
+<body>
+  
+<div class="rectangle">
+  <div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)  
+      <li>li (父亲)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div style="width:500px;">div (祖父)   
+    <p>p (父亲)
+        <span>span</span>
+      </p> 
+  </div>
+</div>
+
+
+</body>
+</html>
