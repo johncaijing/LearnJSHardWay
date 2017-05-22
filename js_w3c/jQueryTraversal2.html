@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Traversal</title>
+	<script src="./jquery-1.7.2.min.js"></script>
+	<style type="text/css">
+		.siblings *
+		{
+			display: block;
+			border: 2px solid lightgrey;
+			color: lightgrey;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+				var siblings = $("span").siblings();
+				siblings.css({
+			"color":"red",
+			"border":"2px solid red"});
+				for (var i = siblings.length - 1; i >= 0; i--) {
+					siblings[i].innerHTML +="(span的同胞)";
+				}
+
+		});
+
+	</script>
+
+</head>
+<body class="siblings">
+
+<div >div (父)
+  <p>p</p>
+  <span>span</span>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <p>p</p>
+</div>
+</body>
+</html>
