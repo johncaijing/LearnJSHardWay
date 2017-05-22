@@ -66,12 +66,12 @@ jQuery库
 #### jQuery CDN库
 
 ```JavaScript
-#Google
+//Google
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-#微软
+//微软
 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
 
 ```
