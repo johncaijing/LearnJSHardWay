@@ -54,7 +54,7 @@ jQuery库
 * Utilities
 
 #### 添加jQuery库
-<script>标签应该位于页面的<head>部分。
+`<script>`标签应该位于页面的`<head>`部分。
 
 #### 下载jQuery
 
@@ -67,13 +67,9 @@ jQuery库
 
 ```JavaScript
 //Google
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
 //微软
-<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"/>
 ```
 
 JS是HTML5以及现代浏览器的默认脚本语言。
