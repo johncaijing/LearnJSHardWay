@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Filtering</title>
+	<script src="./jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		
+         $(document).ready(function(){
+           $("div p").first().css({"color":"red"});
+           $("div p").last().css({"color":"green"});
+           $("div p").eq(1).css({"color":"blue"});
+           $("p").filter(".intro").css("background-color","yellow");
+           $("p").not(".intro").css("background-color","pink");
+         }); 
+
+
+	</script>
+</head>
+<body>
+<h1>欢迎来到我的主页</h1>
+<div>
+<p>这是 div 中的一个段落。</p>
+</div>
+
+<div>
+<p>这是 div 中的另一个段落。</p>
+</div>
+
+<div>
+<p>这是 div 中的第三个段落。</p>
+</div>
+<p>这也是段落。</p>
+<p class="intro">你好，我是小明。今年21岁。</p>
+<p class="intro">Hello,My name is XiaoMing.I'm 21 years old.</p>
+</body>
+</html>
