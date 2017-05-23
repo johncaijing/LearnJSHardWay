@@ -13,12 +13,12 @@
 		function loadTxt(){
 			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function(){
-				if(this.readyState == 4){
+				if(this.readyState == 4 && status == 200){
 					$("h2").html(this.responseText);
 					console.log(this.responseText);
 				}
 			};
-			xhr.open("GET","../res/ajax_info.txt",true);
+			xhr.open("GET","http://localhost:8080/Desktop/ajax_info.txt",true);
 			xhr.send();
 		}
 	</script>
