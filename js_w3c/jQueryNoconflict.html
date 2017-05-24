@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery noConflict</title>
+	<script src="./jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		
+		var jq = $.noConflict();
+		
+
+		jQuery(document).ready(function(){
+             jQuery("#btn1").click(function(){
+             	jQuery("#p1").text("jQuery 仍在运行!!!")
+             });
+		});
+
+		jq(document).ready(function(){
+			jq("#btn2").click(function(){
+				jq("#p2").text("使用引用");
+			});
+		});
+
+		jQuery(document).ready(function($){
+            $("#btn3").click(function(){
+            	$("#p3").text("传递$");
+            });   
+		});
+
+
+
+	</script>
+</head>
+<body>
+
+<button id="btn1">测试</button>
+
+<p id="p1">文本</p>
+
+<button id="btn2">测试（引用）</button>
+
+<p id="p2">文本2</p>
+
+<button id="btn3">测试($传入)</button>
+
+<p id="p3">文本3</p>
+</body>
+</html>

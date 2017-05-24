@@ -331,3 +331,31 @@ html();
 >* eq() 带有指定索引号的元素
 >* filter() 过滤
 >* not() 不匹配的
+
+#### jQuery noConflict()方法
+
+noConflict()方法释放  $ 标识符的控制。
+
+* 使用全名 `jQuery`代替
+
+```javascript
+$.noConflict();
+jQuery("button")...
+```
+
+* 使用自己的引用
+
+```javascript
+var jq = $.noConflict();
+jq("button")...
+```
+
+* 将$作为参数传递
+
+```javascript
+$.noConflict();
+jQuery(document).ready(function($){
+  $("button").click(function(){
+    $("p").text("jQuery 仍在运行！");
+  });
+```
