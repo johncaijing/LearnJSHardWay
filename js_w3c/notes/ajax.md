@@ -65,7 +65,7 @@ readyState 存有XMLHttpRequest的状态信息。
 * 2 : 请求已接收
 * 3 ：请求处理中
 * 4 ：请求已完成，且响应就绪
-* 
+
 onreadystatechange
 
 readyState发生改变时调用
@@ -78,6 +78,18 @@ status 标准HTTP状态码
 
 ```JavaScript
 $(selector).load(URL,data,callback);
+```
+
+##### jQuery $.get()方法
+
+```javascript
+$.get(URL,callback);
+```
+
+##### jQuery $.post()方法
+
+```javascript
+$.post(URL,data,callback);
 ```
 
 
