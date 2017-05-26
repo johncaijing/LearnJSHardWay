@@ -55,3 +55,19 @@ function sum(...rest){
 
 var s = sum(1,2,3,4,5);
 console.log(s);
+
+function test(){
+    return  //JS在行末自动添加分号 return;
+    {
+    	name:"test"
+    };
+}
+
+function test2(){
+	return{
+		name:"test2"
+	};
+}
+
+console.log(test());
+console.log(test2());
