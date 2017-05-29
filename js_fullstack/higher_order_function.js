@@ -73,4 +73,60 @@ var r = str_array.map(s=>parseInt(s));
 
 console.log(r);
 
+//filter
+//接收一个函数，根据函数的返回值是true还是false
+//来决定是否保留元素
+
+var nums = [1,2,3,4,5];
+var result = nums.filter(function(x){
+	return x%2==1;
+});
+
+console.log(result);
+
+
+var stringArray = ['A','','c',null,undefined,' '];
+var filterResult = stringArray.filter(function(s){
+	return s&&s.trim();
+});
+
+console.log(filterResult);
+
+
+//filter()方法可以接收多个参数
+
+var arr = ['A','B','C'];
+var result = arr.filter(function(element,index,self){
+     console.log('element:'+element+' index:'+index);
+     console.log('self:'+self);
+     return true;
+});
+
+console.log(result);
+
+
+//sort
+//JS中的Array的sort()方法
+//先将所有元素转换为String再排序
+
+var numArray = [10,20,1,2]
+var sort = numArray.sort();
+console.log(sort);
+
+
+//sort方法也是高阶函数
+var sort2= numArray.sort(function(x,y){
+   return x>y?1:(x==y?0:-1);
+});
+console.log(sort2);
+
+//sort方法会直接对Array进行修改
+console.log(numArray);
+console.log(sort);
+console.log(sort2);
+
+
+
+
+
 
