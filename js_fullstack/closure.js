@@ -1,7 +1,5 @@
 'use strict';
 
-//闭包
-
 function sum(arr){
 		return arr.reduce(function(x,y){
 			return x+y;
@@ -10,6 +8,7 @@ function sum(arr){
 
 console.log(sum([1,2,3,4,5]));
 
+//闭包
 //不立即求和
 function lazy_sum2(arr){
 	var sum = function(){
