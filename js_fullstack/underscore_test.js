@@ -108,3 +108,164 @@ console.log(_.range(10));
 for(var i of _.range(10)){
 	console.log(i);
 }
+
+//Functions
+
+//bind
+console.log("HelloWorld");
+var log = console.log;
+log("HelloWorld");
+
+log.call(console,'HelloWorld');
+
+var log2 = _.bind(console.log,console);
+log2("HelloWorld");
+
+
+//partial 为一个函数创建偏函数
+var pow2N = _.partial(Math.pow,2);
+console.log(pow2N(3));
+console.log(pow2N(10));
+
+var cube = _.partial(Math.pow,_,3);
+console.log(cube(3));
+console.log(cube(10));
+
+//偏函数==>将原函数的某些参数固定住，降低函数调用的难度
+
+//memoize
+
+function factorial(n){
+	console.log('start calculate '+n+'!...');
+	var s = 1,i = n;
+	while(i>1){
+       s = s*i;
+       i--; 
+	}
+	console.log(n+'!='+s);
+	return s;
+}
+
+factorial(10);
+factorial(10);
+
+var factorial2 = _.memoize(function(n){
+   return factorial(n);
+});
+
+factorial2(15);
+factorial2(15);
+factorial2(15);
+factorial2(14);
+
+
+var fb = _.memoize(function(n){
+   console.log('start calculate '+n+'!...');
+   if(n<2){
+   	  return 1;
+   }else{
+   	return n*fb(n-1);
+   }
+});
+
+log(fb(10)+"\n");
+log(fb(9)+"\n");
+
+//once保证某函数执行且仅执行一次
+
+var register = function(){
+   alert('register!');
+};
+
+register();
+register();
+register();
+
+var register_once = _.once(function(){
+   register();
+});
+
+register_once();
+register_once();
+register_once();
+
+//delay 让一个函数延迟执行，效果和setTimeout()一样
+
+_.delay(register,2000);
+
+
+//Objects
+
+//keys/allKeys
+//keys返回object自身的所有key，不包含从原型链继承下来的
+//values 与keys类似
+
+function Student(name,age){
+	this.name = name;
+	this.age = age;
+}
+
+var xiaoming = new Student('xm',20);
+console.log(_.keys(xiaoming));
+console.log(_.values(xiaoming));
+
+//allKeys()还返回从原型链继承下来的
+Student.prototype.school = 'No.1 Middle school';
+
+var jack = new Student('jack',23);
+console.log(_.allKeys(jack));
+
+//mapObject
+//针对object的map版本
+var obj = {a:1,b:2,c:3};
+log(_.mapObject(obj,(v,k)=>100+v));
+
+//invert
+//交换object的key和value
+var obj2 = {
+  Adam:90,
+  Lisa:88,
+  Bart:69
+};
+
+log(_.invert(obj2));
+
+//extend/extendOwn
+//extend合并多个object的key-value到第一个object并返回
+//extendOwn忽略从原型链继承的属性
+
+log(
+   _.extend(
+    {name:'bob',age:20},
+    {age:15},
+    {age:34,city:'BeiJing'}
+   	)
+	);
+
+//clone 复制object对象 浅复制
+var source = {
+    name: '小明',
+    age: 20,
+    skills: ['JavaScript', 'CSS', 'HTML']
+};
+var copied = _.clone(source);
+copied.name = 'Jack';
+alert(JSON.stringify(copied, null, '  '));
+
+//isEqual 对两个object进行深度比较
+var o1 = ['Bob', { skills: ['Java', 'JavaScript'] }];
+var o2 = ['Bob', { skills: ['Java', 'JavaScript'] }];
+
+log(o1 === o2); // false
+log(_.isEqual(o1, o2)); // true
+
+
+//Chaining
+//把对象包装成能进行链式调用的方法
+
+log(
+  _.chain([1,3,4,6,9])
+   .map(x=>x+2)
+   .filter(x=>x%2==1)
+   .value()
+	);
