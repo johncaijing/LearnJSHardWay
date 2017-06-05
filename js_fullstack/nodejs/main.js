@@ -12,6 +12,9 @@ basic_module();
 var fs_main = require('./fs');
 fs_main();
 
+var stream_main = require('./stream');
+stream_main();
+
 
 //模块加载机制:CommonJS规范
 //http://javascript.ruanyifeng.com/nodejs/module.html
