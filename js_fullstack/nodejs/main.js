@@ -1,19 +1,22 @@
 'use strict';
 
-var greet = require('./hello');
+// var greet = require('./hello');
 
-var name = 'John';
+// var name = 'John';
 
-greet(name);
+// greet(name);
 
-var basic_module = require('./basic_module');
-basic_module();
+// var basic_module = require('./basic_module');
+// basic_module();
 
-var fs_main = require('./fs');
-fs_main();
+// var fs_main = require('./fs');
+// fs_main();
 
-var stream_main = require('./stream');
-stream_main();
+// var stream_main = require('./stream');
+// stream_main();
+
+var crypto_main = require('./crypto');
+crypto_main();
 
 
 //模块加载机制:CommonJS规范
