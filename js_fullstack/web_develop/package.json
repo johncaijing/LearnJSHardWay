@@ -1,0 +1,23 @@
+{
+    "name": "web-develop",
+    "version": "1.0.0",
+    "description": "Web development ",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "keywords": [
+        "koa",
+        "async"
+    ],
+    "author": "John Tsai",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JohnRyanTsai/LearnJSHardWay.git"
+    },
+    "dependencies": {
+        "koa": "2.0.0",
+        "koa-router": "7.0.0"
+    }
+}
