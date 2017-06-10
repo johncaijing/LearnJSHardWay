@@ -143,8 +143,8 @@ kitty.name = "kittycat";
 kitty.numLives--;
 
 
-//结构
-//结构数组
+//解构
+//解构数组
 let input = [111,222];
 let[first,second] = input;
 
@@ -161,6 +161,8 @@ let o = {
 
 
 let{aa,bb} = o;
+
+
 
 
 
