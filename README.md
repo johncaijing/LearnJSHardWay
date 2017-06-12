@@ -6,6 +6,8 @@
 * [廖雪峰的JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
 * [Mozilla JavaScript教程](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 
+* [ECMAScript6入门](http://es6.ruanyifeng.com/)
+
 ## 前端学习路线图
 
 ![](./res/front-end-roadmap.png)
