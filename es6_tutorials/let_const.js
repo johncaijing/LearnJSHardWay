@@ -1,3 +1,4 @@
+'use strict';
 {
 	let a = 10; //let声明的变量只在所在的代码块有效
 	var b = 1;
@@ -151,3 +152,120 @@ f1();
 if(true){
 	function f(){}
 }
+
+try{
+	function f() {}
+}catch(e){
+
+}
+
+function g(){
+	console.log('outsize');
+}
+
+(function(){
+    if(false){
+		function g(){
+			console.log('inside');
+		}
+	}
+	// g();
+}());
+
+//函数声明语句
+{
+	let a = 'secret';
+	function f(){
+		return a;
+	}
+}
+
+//函数表达式
+{
+	let a = 'secret';
+	let f = function(){
+		return a;
+	}
+}
+
+//const
+//声明一个只读的常量
+
+const PI = 3.1415;
+console.log(PI);
+
+// PI = 3;//TypeError
+
+// const foo;//必须立即初始化
+
+//const只在声明所在的块级作用域有效
+if(true){
+	// console.log(MAX);//const也存在暂时性死区
+	const MAX = 5;
+}
+// console.log(MAX);
+
+//const声明的变量不可重复声明
+
+var message = "Hello";
+let age = 21;
+
+// const message = "Goodbye";
+// const age = 22;
+
+//const的本质
+const fooo = {};
+
+fooo.prop = 123;
+fooo.prop = 456;
+
+console.log(fooo);
+
+// fooo = {};//Assignment to constant var.
+
+
+	
+  //冻结对象
+  const fbb = Object.freeze({});
+//   fbb.prop = 123;
+
+
+//ES6声明变量的六种方法
+//var
+//function
+//let
+//const
+//import
+//class
+
+//顶层对象的属性
+//浏览器环境:window
+//Node:global
+
+var a = 1;
+// console.log(window.a);
+
+let bbb = 2;
+// console.log(window.bbb);//undefined
+
+//获取顶层对象
+(typeof window !=='undefined'
+  ?window
+  :(typeof process === 'object'&&
+    typeof require === 'function' &&
+	typeof global === 'object')?global:this);
+
+var getGlobal = function(){
+	if(typeof self !== 'undefined'){
+		return self;
+	}
+	if(typeof window !== 'undefined'){
+		return window;
+	}
+	if(typeof global !== 'undefined'){
+        return global;   
+	}
+	throw new Error('unable to get global object');
+}
+
+console.log(getGlobal());
