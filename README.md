@@ -8,6 +8,8 @@
 
 * [ECMAScript6入门](http://es6.ruanyifeng.com/)
 
+* [TypeScript Handbook中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+
 ## 前端学习路线图
 
 ![](./res/front-end-roadmap.png)
