@@ -142,3 +142,144 @@ log('js'.repeat(2.3));
 
 //参数是字符串 会先转换为数字
 log('na'.repeat('3'));
+
+
+//9.padStart padEnd
+//padStart 用于头部补全
+//padEnd 用于尾部补全
+//字符串不够指定长度，会在头部，尾部补全。
+log('x'.padStart(5,'ab'));
+log('x'.padStart(4,'ab'));
+
+log('x'.padEnd(5,'ab'));
+log('x'.padEnd(4,'ab'));
+
+log('xxx'.padEnd(2,'ab'));
+log('xxx'.padStart(2,'ab'));
+
+log('abc'.padStart(10,'1234567890'));
+
+log('x'.padStart(4));
+log('x'.padEnd(4));
+
+//padStart的用途
+//1.为数值补全指定位数
+//2.提示字符串格式
+log('1'.padStart(10,'0'));
+log('12'.padStart(10,'0'));
+
+log('12'.padStart(10,'YYYY-MM-DD'));
+log('06-17'.padStart(10,'YYYY-MM-DD'));
+
+//10.模板字符串
+//传统JS
+var str = 'There are <b> XXX </b>'+
+    'items in your basket,'+
+    '<em> XXX'+'</em> are on sale!';
+
+//ES6引入的模板字符串
+//模板字符串是增强版的字符串，用反引号标识
+//可以做普通字符串
+var normal_str = `In JavaScript balabala`;
+log(normal_str);
+
+//定义多行字符串，所有的空格和缩进都会被保留在输出中
+var multi_line = `
+   In JavaScript bala
+   bala this that.`;    
+log(multi_line);
+
+var html_str = `
+<ul>
+  <li>first</li>
+  <li>second</li>
+</ul>
+`;
+log(html_str);
+
+//在字符串中嵌入变量
+var name = "John";
+var time = "Today";
+var str2 = `Hello ${name},how are you ${time}`;
+log(str2);
+
+//大括号内部可以放入任意的JS表达式，可以进行运算，以及引用对象属性
+var x1= 1;
+var y1= 2;
+
+log(`${x1} + ${y1} = ${x1+y1}`);
+
+var obj = {
+   x:1,
+   y:2   
+ };
+
+ log(`${obj.x+obj.y}`);
+
+//调用函数
+function fn(){
+    return "HelloWorld!";
+}
+
+log(`foo ${fn()} bar`);
+
+//模板字符串中需要使用反引号，需要用反斜杠转义
+var greeting = `\`Yo\` What'up`;
+log(greeting);
+
+//嵌套
+const teml = addrs => `
+  <table>
+  ${addrs.map(addr=>`
+    <tr><td>${addr.first}</td></tr>
+    <tr><td>${addr.last}</td><tr>
+  `).join('')}
+  </table>
+`;
+
+const data = [
+    {first:'<Jack>',last:'Ma'},
+    {first:'Lars',last:'<Crotf>'},
+];
+
+log(teml(data));
+
+//引用模板字符串本身
+let str_self = 'return'+'`Hello ${name}!`';
+let func = new Function('name',str_self);
+log(func('JackMa'));
+
+let str_self2 = '(name)=>`Hello ${name}!`';//http://www.w3school.com.cn/jsref/jsref_eval.asp
+let func2 = eval.call(null,str_self2);//eval函数可以执行JavaScript代码
+log(func2('PonyMa'));
+
+//11.模板编译
+var template = `
+<ul>
+  <% for(var i=0; i < data.supplies.length; i++) { %>
+    <li><%= data.supplies[i] %></li>
+  <% } %>
+</ul>
+`;
+
+//12.标签模板
+//函数调用的一种特殊形式
+//标签指的是函数
+//模板字符串就是参数
+
+log`123`;
+//等同于
+log(123);
+
+//13.String.raw()
+//ES6为原生的String对象提供raw方法
+//String.raw方法:模板字符串的处理函数
+//返回一个斜杠都被转义的字符串
+log(String.raw`Hi\b${2+3}`);
+log(String.raw`Hi\u0000A!`);
+log(String.raw`Hi\\n`);
+
+//14.模板字符串的限制
+//模板字符串默认会将字符串转义
+//导致无法嵌入其他语言
+
