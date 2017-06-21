@@ -3,12 +3,27 @@
    <head>
        <title>MVVM</title>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
        <script src="./mvvm.js"></script>
    </head>
     <body>
       <p id="num">123456</p>
       <p>Hello, <span id="name">Bart</span>!</p>
       <p>You are <span id="age">12</span>.</p>
+      <div id="vm">
+          <p>Hello,{{name}}</p>
+          <p>You are {{age}}</p>
+          <p>Hello,<span v-text="name2"></span>!</p>
+      </div>
+      <form id="form" action="#" v-on:submit.prevent="register">
+          <p><input v-model="email"></p>
+          <p><input v-model="name"></p>
+          <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      
+<label><input id = "cb" type="checkbox" v-model="language" value="zh"> Chinese</label>
+<label><input id = "cb" type="checkbox" v-model="language" value="en"> English</label>
+<label><input id = "cb" type="checkbox" v-model="language" value="fr"> French</label>
     </body>
 
 
