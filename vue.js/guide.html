@@ -4,6 +4,11 @@
       <script src="https://unpkg.com/vue/dist/vue.js"></script>
       <script>
           window.onload = function(){
+               Vue.component(
+                  'todo-item',{
+                      template:'<li>这是个代办项</li>'
+                  }
+              );
               var app = new Vue({
                   el:'#app',
                   data:{
@@ -19,9 +24,47 @@
               var app3 = new Vue({
                   el:'#app3',
                   data:{
-                      see:true
+                      seen:false
                   }
-              }); 
+              });
+              var app4 = new Vue({
+                  el:'#app4',
+                  data:{
+                      todos:[
+                          {text:'学习JS'},
+                          {text:'学习Vue'},
+                          {text:'搞个牛项目'}
+                      ]
+                  }
+              });
+              var app5 = new Vue({
+                  el:'#app5',
+                  methods:{
+                      addTodo:function(){
+                          window.app4.todos.push({text:'add by click'});
+                      },
+                      removeTodo:function(){
+                          if(window.app4.todos.length>0){
+                              window.app4.todos.pop();
+                          }else{
+                              alert('没有Todo了');
+                          }
+                      }
+                  }
+              });
+              var app6 = new Vue({
+                  el:'#app6',
+                  data:{
+                      message:'Hello Vuejs!'
+                  }
+              });
+           
+              window.app = app;
+              window.app2 = app2;
+              window.app3 = app3;
+              window.app4 = app4;
+              window.app5 = app5;
+              window.app6 = app6;
           }
       </script>
   </head>
@@ -36,8 +79,29 @@
           </span>
       </div>
       <div id="app3">
-          <p v-if="see">看到了</p>
+          <p v-if="seen">看到了</p>
       </div>
+      <div id="app4">
+          <ol>
+              <li v-for="todo in todos">
+                  {{todo.text}}
+              </li>
+          </ol>
+      </div>
+      <div id="app5">
+          <button v-on:click="addTodo">添加Todo</button>
+          <button @click="removeTodo">删除Todo</button>
+     </div>
+     <!--双向绑定-->
+     <div id="app6">
+        <p>{{message}}</p>
+        <input v-model="message"/>
+     </div>
+     <div>
+         <ol>
+             <todo-item></todo-item>
+         </ol>
+     </div>
   </body>
  
 
