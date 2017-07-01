@@ -1,0 +1,59 @@
+<html>
+   
+   <head>
+       <script src="https://unpkg.com/vue/dist/vue.js"></script>  
+       <script>
+           window.onload =function(){
+                var data = {a:1};
+                var vm = new Vue({
+                    data:data
+                });  
+
+                console.log(vm.a === data.a);
+
+                console.log(data.a);
+
+                vm.a = 2;
+                console.log(data.a);
+
+                data.a = 3;
+                console.log(vm.a);
+
+                console.log(vm.$data === data);
+
+                vm.$watch('a',function(newValue,oldValue){
+                     console.log(`old:${oldValue} new:${newValue}`);
+                });
+
+                vm.a = 10;
+
+                var vm_life = new Vue({
+                    data:{
+                        a:1
+                    },
+                    created:function(){
+                        console.log('created:'+this.a);
+                    },
+                    mounted:function(){
+                        console.log('mounted');
+                    },
+                    destroyed:function(){
+                        console.log('destroyed');
+                    },
+                    updated:function(){
+                        console.log('updated');
+                    }
+
+                });
+                vm_life.a = 2;
+                window.vm = vm;
+                window.vm_life =vm_life;
+
+           };
+       </script>
+   </head>
+
+
+
+
+</html>

@@ -6,7 +6,8 @@
           window.onload = function(){
                Vue.component(
                   'todo-item',{
-                      template:'<li>这是个代办项</li>'
+                      props:['todo'],
+                      template:'<li>{{todo.text}}</li>'
                   }
               );
               var app = new Vue({
@@ -58,6 +59,16 @@
                       message:'Hello Vuejs!'
                   }
               });
+              var app7 = new Vue({
+                el:'#app7',
+                data:{
+                   groceryList:[
+                    {text:'AAAAAA'},
+                    {text:'BBBBB'},
+                    {text:'CCCCC'}   
+                   ]            
+                }
+              });
            
               window.app = app;
               window.app2 = app2;
@@ -65,6 +76,7 @@
               window.app4 = app4;
               window.app5 = app5;
               window.app6 = app6;
+              window.app7 = app7;
           }
       </script>
   </head>
@@ -97,9 +109,9 @@
         <p>{{message}}</p>
         <input v-model="message"/>
      </div>
-     <div>
+     <div id="app7">
          <ol>
-             <todo-item></todo-item>
+             <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
          </ol>
      </div>
   </body>
